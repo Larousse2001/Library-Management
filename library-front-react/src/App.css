@@ -1,0 +1,71 @@
+.app-container {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 2rem;
+  color: white;
+}
+
+.App-logo {
+  height: 80px;
+  animation: App-logo-spin infinite 20s linear;
+}
+
+.App-title {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+}
+
+.App-main {
+  padding: 2rem;
+}
+
+.auth-section,
+.search-section {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+h2 {
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.App-footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f1f1f1;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #61dafb;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #21a1f1;
+}
+
+.page {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
