@@ -1,5 +1,0 @@
-com\example\searchservice\entity\Book$BookBuilder.class
-com\example\searchservice\controller\SearchController.class
-com\example\searchservice\entity\Book.class
-com\example\searchservice\repository\BookRepository.class
-com\example\searchservice\SearchServiceApplication.class
