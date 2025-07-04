@@ -21,37 +21,37 @@ public class DataLoader implements CommandLineRunner {
                     .author("F. Scott Fitzgerald")
                     .category("Fiction")
                     .build());
-
+// Add sample books
             bookRepository.save(Book.builder()
                     .title("To Kill a Mockingbird")
                     .author("Harper Lee")
                     .category("Fiction")
                     .build());
-
+// Add sample books
             bookRepository.save(Book.builder()
                     .title("1984")
                     .author("George Orwell")
                     .category("Dystopian Fiction")
                     .build());
-
+// Add sample books
             bookRepository.save(Book.builder()
                     .title("Pride and Prejudice")
                     .author("Jane Austen")
                     .category("Romance")
                     .build());
-
+// Add sample books
             bookRepository.save(Book.builder()
                     .title("The Catcher in the Rye")
                     .author("J.D. Salinger")
                     .category("Fiction")
                     .build());
-
+// Add sample books
             bookRepository.save(Book.builder()
                     .title("Lord of the Flies")
                     .author("William Golding")
                     .category("Fiction")
                     .build());
-
+// Add sample books
             bookRepository.save(Book.builder()
                     .title("The Hobbit")
                     .author("J.R.R. Tolkien")
