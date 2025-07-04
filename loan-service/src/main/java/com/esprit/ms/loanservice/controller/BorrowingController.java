@@ -72,7 +72,7 @@ public class BorrowingController {
         
         return ResponseEntity.ok(savedBorrowing);
     }
-
+//by id
     @PutMapping("/return/{id}")
     @Operation(summary = "Return a book", description = "Mark a borrowed book as returned")
     @ApiResponses(value = {
