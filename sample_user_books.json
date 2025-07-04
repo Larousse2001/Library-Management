@@ -1,0 +1,54 @@
+[
+  {
+    "userId": 1,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "category": "Programming",
+    "status": "READ",
+    "totalPages": 464,
+    "currentPage": 464,
+    "progress": 100,
+    "rating": 5,
+    "notes": "Excellent book on writing maintainable code!",
+    "dateStarted": "2024-12-01",
+    "dateFinished": "2024-12-15"
+  },
+  {
+    "userId": 1,
+    "title": "The Pragmatic Programmer",
+    "author": "David Thomas",
+    "category": "Programming",
+    "status": "READING",
+    "totalPages": 352,
+    "currentPage": 200,
+    "progress": 57,
+    "rating": 0,
+    "notes": "Really enjoying this so far!",
+    "dateStarted": "2024-12-20"
+  },
+  {
+    "userId": 1,
+    "title": "Design Patterns",
+    "author": "Gang of Four",
+    "category": "Programming",
+    "status": "WISHLIST",
+    "totalPages": 395,
+    "currentPage": 0,
+    "progress": 0,
+    "rating": 0,
+    "notes": "Want to read this next"
+  },
+  {
+    "userId": 1,
+    "title": "System Design Interview",
+    "author": "Alex Xu",
+    "category": "Technology",
+    "status": "READING",
+    "totalPages": 322,
+    "currentPage": 150,
+    "progress": 47,
+    "rating": 0,
+    "notes": "Great for interview prep",
+    "dateStarted": "2025-01-01"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "isbn": "9780132350884",
+    "category": "Programming",
+    "totalPages": 464,
+    "publicationYear": 2008,
+    "description": "A Handbook of Agile Software Craftsmanship"
+  },
+  {
+    "title": "The Pragmatic Programmer",
+    "author": "David Thomas",
+    "isbn": "9780201616224",
+    "category": "Programming",
+    "totalPages": 352,
+    "publicationYear": 1999,
+    "description": "From Journeyman to Master"
+  },
+  {
+    "title": "Design Patterns",
+    "author": "Gang of Four",
+    "isbn": "9780201633610",
+    "category": "Programming", 
+    "totalPages": 395,
+    "publicationYear": 1994,
+    "description": "Elements of Reusable Object-Oriented Software"
+  },
+  {
+    "title": "Introduction to Algorithms",
+    "author": "Thomas H. Cormen",
+    "isbn": "9780262033848",
+    "category": "Computer Science",
+    "totalPages": 1312,
+    "publicationYear": 2009,
+    "description": "The comprehensive guide to algorithms"
+  },
+  {
+    "title": "System Design Interview",
+    "author": "Alex Xu",
+    "isbn": "9798664653403",
+    "category": "Technology",
+    "totalPages": 322,
+    "publicationYear": 2020,
+    "description": "An insider's guide to system design interviews"
+  }
+]

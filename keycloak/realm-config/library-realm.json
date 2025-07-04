@@ -1,0 +1,242 @@
+{
+  "realm": "library-management",
+  "enabled": true,
+  "displayName": "Library Management System",
+  "accessTokenLifespan": 300,
+  "refreshTokenMaxReuse": 0,
+  "ssoSessionIdleTimeout": 1800,
+  "ssoSessionMaxLifespan": 36000,
+  "roles": {
+    "realm": [
+      {
+        "name": "ADMIN",
+        "description": "Library Administrator with full access"
+      },
+      {
+        "name": "LIBRARIAN",
+        "description": "Library Staff with book management access"
+      },
+      {
+        "name": "USER",
+        "description": "Regular library user"
+      }
+    ]
+  },
+  "users": [
+    {
+      "username": "admin",
+      "enabled": true,
+      "firstName": "Admin",
+      "lastName": "User",
+      "email": "admin@library.com",
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin123",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["ADMIN"],
+      "clientRoles": {
+        "library-client": ["admin"]
+      }
+    },
+    {
+      "username": "librarian",
+      "enabled": true,
+      "firstName": "Library",
+      "lastName": "Staff",
+      "email": "librarian@library.com",
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "librarian123",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["LIBRARIAN"],
+      "clientRoles": {
+        "library-client": ["librarian"]
+      }
+    },
+    {
+      "username": "user",
+      "enabled": true,
+      "firstName": "Regular",
+      "lastName": "User",
+      "email": "user@library.com",
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "user123",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["USER"],
+      "clientRoles": {
+        "library-client": ["user"]
+      }
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "library-client",
+      "name": "Library Management Client",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "bearerOnly": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "redirectUris": [
+        "http://localhost/*",
+        "http://localhost:3000/*",
+        "http://localhost:8080/*"
+      ],
+      "webOrigins": [
+        "http://localhost",
+        "http://localhost:3000",
+        "http://localhost:8080"
+      ],
+      "baseUrl": "http://localhost",
+      "adminUrl": "http://localhost",
+      "secret": "library-client-secret",
+      "defaultClientScopes": [
+        "web-origins",
+        "role_list",
+        "profile",
+        "roles",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "offline_access",
+        "microprofile-jwt"
+      ],
+      "protocolMappers": [
+        {
+          "name": "Client ID",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usersessionmodel-note-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.session.note": "clientId",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "clientId",
+            "jsonType.label": "String"
+          }
+        },
+        {
+          "name": "realm roles",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-realm-role-mapper",
+          "consentRequired": false,
+          "config": {
+            "multivalued": "true",
+            "userinfo.token.claim": "true",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "realm_access.roles",
+            "jsonType.label": "String"
+          }
+        }
+      ],
+      "authorizationSettings": {
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "User Management",
+            "uri": "/api/user/*",
+            "type": "http://library.com/user",
+            "scopes": ["read", "write", "delete"]
+          },
+          {
+            "name": "Book Management",
+            "uri": "/api/books/*",
+            "type": "http://library.com/books",
+            "scopes": ["read", "write", "delete"]
+          },
+          {
+            "name": "Loan Management",
+            "uri": "/api/loans/*",
+            "type": "http://library.com/loans",
+            "scopes": ["read", "write"]
+          },
+          {
+            "name": "Search",
+            "uri": "/api/search/*",
+            "type": "http://library.com/search",
+            "scopes": ["read"]
+          }
+        ],
+        "policies": [
+          {
+            "name": "Admin Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"ADMIN\",\"required\":true}]"
+            }
+          },
+          {
+            "name": "Librarian Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"LIBRARIAN\",\"required\":true}]"
+            }
+          },
+          {
+            "name": "User Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"USER\",\"required\":true}]"
+            }
+          }
+        ],
+        "scopes": [
+          {
+            "name": "read"
+          },
+          {
+            "name": "write"
+          },
+          {
+            "name": "delete"
+          }
+        ]
+      }
+    }
+  ],
+  "scopeMappings": [
+    {
+      "client": "library-client",
+      "roles": ["ADMIN", "LIBRARIAN", "USER"]
+    }
+  ],
+  "defaultDefaultClientScopes": [
+    "role_list",
+    "profile",
+    "email",
+    "web-origins"
+  ],
+  "defaultOptionalClientScopes": [
+    "offline_access",
+    "address",
+    "phone",
+    "microprofile-jwt"
+  ]
+}

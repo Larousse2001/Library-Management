@@ -1,0 +1,270 @@
+.leaderboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.leaderboard-header {
+  margin-bottom: 30px;
+}
+
+.leaderboard-header h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 120px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #34495e;
+  font-size: 14px;
+}
+
+.filter-group select {
+  padding: 8px 12px;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.user-rank-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.user-rank-card h3 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+}
+
+.rank-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.rank-info .rank {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.rank-info .score {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.rank-info .category {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #7f8c8d;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+.no-data {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  color: #6c757d;
+}
+
+.no-data p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.leaderboard-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.table-header, .table-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px 120px 140px;
+  gap: 20px;
+  padding: 15px 20px;
+  align-items: center;
+}
+
+.table-header {
+  background: #34495e;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.table-row {
+  border-bottom: 1px solid #ecf0f1;
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background: #f8f9fa;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row.top-three {
+  background: linear-gradient(90deg, #fff7e6, #ffffff);
+}
+
+.rank-display {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-id {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.score {
+  font-size: 18px;
+  font-weight: 600;
+  color: #27ae60;
+}
+
+.points-label {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-left: 4px;
+}
+
+.category-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.category-badge.reading {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.category-badge.challenges {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.category-badge.overall {
+  background: #e8f5e8;
+  color: #2e7d32;
+}
+
+.updated-col {
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.leaderboard-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.refresh-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.refresh-btn:hover {
+  background: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .leaderboard-container {
+    padding: 15px;
+  }
+  
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-group {
+    min-width: auto;
+  }
+  
+  .rank-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .table-header, .table-row {
+    grid-template-columns: 60px 1fr 80px;
+    gap: 10px;
+    padding: 12px 15px;
+  }
+  
+  .category-col, .updated-col {
+    display: none;
+  }
+  
+  .user-info {
+    font-size: 14px;
+  }
+  
+  .score {
+    font-size: 16px;
+  }
+}
